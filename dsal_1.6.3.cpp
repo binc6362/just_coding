@@ -23,7 +23,7 @@ public:
 
 	const string &getName() const { return name; }
 
-	void print(ostream &out) const 
+	void print(ostream &out) const
 	{ out << name << " (" << salary << ") "; }
 
 	bool operator<(const Employee &rhs) const
