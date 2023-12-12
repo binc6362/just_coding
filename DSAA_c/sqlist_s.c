@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MaxSize 10
 #define For(a,b) for (int i = (a); i < (b); i++)
@@ -60,34 +61,24 @@ int Findkth(int sqlist[], int *size, int loc)
 
 void Insert(int sqlist[], int *size, int value, int loc)
 {
-	if (*size == MaxSize) {
-		printf("sqlist now is full\n");
-		return;
-	}
 	//illegal insert
-	if (loc < 1 || loc > *size + 1)
-		return;
-	if (loc <= *size) {
-		for (int i = *size - 1; i >= loc - 1; i--)
-			sqlist[i+1] = sqlist[i];
-	}
+	if (*size == MaxSize || loc < 1 || loc > *size + 1)
+		exit(0);
+	//if (loc <= *size) { //not need, because loc = *size + 1, i can never big than loc - 1 in below for loop
+	for (int i = *size - 1; i >= loc - 1; i--)
+		sqlist[i+1] = sqlist[i];
+	//}
 	sqlist[loc-1] = value;
 	*size += 1;
 }
 
 void Delete(int sqlist[], int *size, int loc)
 {
-	if (*size == 0) {
-		printf("sqlist is empty\n");
-		return;
-	}
 	//illegal delete
 	if (loc < 1 || loc > *size)
-		return;
+		exit(0);
 
-	if (loc < *size) {
-		for (int i = loc; i <= *size - 1;i++)
-			sqlist[i-1] = sqlist[i];
-	}
+	for (int i = loc; i <= *size - 1;i++)
+		sqlist[i-1] = sqlist[i];
 	*size -= 1;
 }
