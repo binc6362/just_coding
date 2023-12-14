@@ -74,8 +74,6 @@ void delete(int sqlist[], int *len, int loc)
 	//judge illegal delete,loc must in range [1,len]
 	if (loc < 1 || loc > *len)
 		exit(EXIT_FAILURE);
-
-	// 1 2 3 4
 	// delete value at loc(loc < len), then range[loc,len-1] need move forward, from front to back move one by one
 	// except delete value at loc(loc=len-1),no need to move,
 	// then sqlist length dec 1.
