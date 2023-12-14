@@ -1,3 +1,12 @@
+/*
+*******************************************************
+*Author       : bin.c 
+*Last modified: 2023-12-14 08:57
+*Email        : cb99986174@163.com
+*Filename     : sqlist_s.c
+*Description  : 
+*******************************************************
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
