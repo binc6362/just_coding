@@ -48,6 +48,7 @@ int main(void)
 	//5.print linklist
 	print(list);
 	//6.destory linklist
+	destory(&list);
 	return 0;
 }
 
